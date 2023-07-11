@@ -1,0 +1,8 @@
+package com.joct.SpringBootExample;
+
+public class Controller {
+	
+	public String sayWelcome() {
+		return "Hai Hello,Iam Sreekanth";
+	}
+}

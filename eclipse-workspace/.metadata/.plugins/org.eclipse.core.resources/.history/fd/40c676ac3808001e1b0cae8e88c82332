@@ -1,0 +1,12 @@
+package com.conditionalStmts;
+
+public class StringEx {
+	public static void main(String[] args) {
+		String s="Sreekant";
+		
+		StringBuffer ab=new StringBuffer(s);
+		System.out.println("Reverse a word : "+ab.reverse());
+		
+	}
+
+}

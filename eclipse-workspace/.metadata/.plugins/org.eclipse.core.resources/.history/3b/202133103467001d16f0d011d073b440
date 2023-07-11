@@ -1,0 +1,28 @@
+package com.joc;
+
+import java.util.Iterator;
+import java.util.List;
+
+import javax.persistence.NamedQuery;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+
+public class NamedQueryEx {
+		
+	public static void main(String[] args) {
+		Session se=Hibernate_UtilFamily.getSessionn();
+		List<College>list=se.getNamedQuery("findallcolleges").list();
+		Iterator<College>itr=list.iterator();
+		while(itr.hasNext()) {
+			College c=itr(College).next();
+			System.out.println("College id : "+c.getCid()+" Name : "+c.getCname()+" location : "+c.getLocation() );
+		}
+		Query q=se.getNamedQuery("findcollegebyid");
+		q.setParameter("cd",111);
+		List<College>c=q.list();
+		c.forEach(
+				(y)->System.out.println("College id : "+y.getCid()+" Name : "+y.getCname()+" location : "+y.getLocation())
+				);
+	}
+}

@@ -1,0 +1,23 @@
+package com.java.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.java.model.Books;
+import com.java.service.BooksService;
+
+@RestController
+public class BooksController {
+	
+	@Autowired
+	BooksService booksService;
+	
+	@PostMapping("/books")  
+	private int saveBook(@RequestBody Books books) {   
+	booksService.saveOrUpdate(books);  
+	return books.getBid(); 
+	}  
+
+}

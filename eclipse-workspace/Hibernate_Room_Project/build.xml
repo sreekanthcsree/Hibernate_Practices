@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Hibernate_Room_Project">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../Downloads/eclipse-jee-oxygen-3-win32-x86_64/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Maven Dependencies.libraryclasspath">
+        <pathelement location="../../.m2/repository/org/hibernate/hibernate-core/3.6.3.Final/hibernate-core-3.6.3.Final.jar"/>
+        <pathelement location="../../.m2/repository/antlr/antlr/2.7.6/antlr-2.7.6.jar"/>
+        <pathelement location="../../.m2/repository/commons-collections/commons-collections/3.1/commons-collections-3.1.jar"/>
+        <pathelement location="../../.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+        <pathelement location="../../.m2/repository/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar"/>
+        <pathelement location="../../.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+        <pathelement location="../../.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar"/>
+        <pathelement location="../../.m2/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar"/>
+        <pathelement location="../../.m2/repository/javassist/javassist/3.1/javassist-3.1.jar"/>
+        <pathelement location="../../.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar"/>
+        <pathelement location="../../.m2/repository/mysql/mysql-connector-java/8.0.30/mysql-connector-java-8.0.30.jar"/>
+        <pathelement location="../../.m2/repository/com/google/protobuf/protobuf-java/3.19.4/protobuf-java-3.19.4.jar"/>
+    </path>
+    <path id="Hibernate_Room_Project.classpath">
+        <pathelement location="target/classes"/>
+        <pathelement location="target/test-classes"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.DeletePersonDetails.classpath">
+        <path refid="Hibernate_Room_Project.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.GetPersonDetails.classpath">
+        <path refid="Hibernate_Room_Project.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.ManyToOneExample.classpath">
+        <path refid="Hibernate_Room_Project.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.ManyToOneRetrieve (1).classpath">
+        <path refid="Hibernate_Room_Project.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.OneToManyExample.classpath">
+        <path refid="Hibernate_Room_Project.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.OneToManyRetrieve (1).classpath">
+        <path refid="Hibernate_Room_Project.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.OneToOneExample (1).classpath">
+        <path refid="Hibernate_Room_Project.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.OneToOneRetrieve (1).classpath">
+        <path refid="Hibernate_Room_Project.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.PersonDetails.classpath">
+        <path refid="Hibernate_Room_Project.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <mkdir dir="target/test-classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/resources">
+                <exclude name="**/*.java"/>
+                <exclude name="**"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/resources">
+                <exclude name="**/*.java"/>
+                <exclude name="**"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+        <delete dir="target/test-classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/main/java"/>
+            <src path="src/main/resources"/>
+            <exclude name="**"/>
+            <classpath refid="Hibernate_Room_Project.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/test/java"/>
+            <src path="src/test/resources"/>
+            <exclude name="**"/>
+            <classpath refid="Hibernate_Room_Project.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="DeletePersonDetails">
+        <java classname="com.sree.DeletePersonDetails" failonerror="true" fork="yes">
+            <classpath refid="run.DeletePersonDetails.classpath"/>
+        </java>
+    </target>
+    <target name="GetPersonDetails">
+        <java classname="com.sree.GetPersonDetails" failonerror="true" fork="yes">
+            <classpath refid="run.GetPersonDetails.classpath"/>
+        </java>
+    </target>
+    <target name="ManyToOneExample">
+        <java classname="com.sree.ManyToOneExample" failonerror="true" fork="yes">
+            <classpath refid="run.ManyToOneExample.classpath"/>
+        </java>
+    </target>
+    <target name="ManyToOneRetrieve (1)">
+        <java classname="com.sree.ManyToOneRetrieve" failonerror="true" fork="yes">
+            <classpath refid="run.ManyToOneRetrieve (1).classpath"/>
+        </java>
+    </target>
+    <target name="OneToManyExample">
+        <java classname="com.sree.OneToManyExample" failonerror="true" fork="yes">
+            <classpath refid="run.OneToManyExample.classpath"/>
+        </java>
+    </target>
+    <target name="OneToManyRetrieve (1)">
+        <java classname="com.sree.OneToManyRetrieve" failonerror="true" fork="yes">
+            <classpath refid="run.OneToManyRetrieve (1).classpath"/>
+        </java>
+    </target>
+    <target name="OneToOneExample (1)">
+        <java classname="com.sree.OneToOneExample" failonerror="true" fork="yes">
+            <classpath refid="run.OneToOneExample (1).classpath"/>
+        </java>
+    </target>
+    <target name="OneToOneRetrieve (1)">
+        <java classname="com.sree.OneToOneRetrieve" failonerror="true" fork="yes">
+            <classpath refid="run.OneToOneRetrieve (1).classpath"/>
+        </java>
+    </target>
+    <target name="PersonDetails">
+        <java classname="com.sree.PersonDetails" failonerror="true" fork="yes">
+            <classpath refid="run.PersonDetails.classpath"/>
+        </java>
+    </target>
+</project>

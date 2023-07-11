@@ -1,0 +1,17 @@
+package com.joc;
+
+import java.util.List;
+
+import org.hibernate.Session;
+
+public class MnayToOneRetrieve {
+	public static void main(String[] args) {
+		Session se=Hibernate_UtilFamily.getSessionn();
+		
+		List<Groups>slist=se.createQuery("from Groups").list();
+		slist.forEach(
+				(d)->System.out.println("id: "+d.getGid()+"Name: "+d.getGname()+"Fees: "+d.getFees()
+				    +"c_id: "+d.getCol().getCid()+"c_name: "+d.getCol().getCname()+"Location: "+d.getCol().getLocation())
+				);
+	}
+}

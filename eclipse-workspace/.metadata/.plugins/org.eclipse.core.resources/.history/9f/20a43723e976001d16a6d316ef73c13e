@@ -1,0 +1,18 @@
+package com.joc;
+
+import java.util.Date;
+
+public class Theatre {
+	int t_id;
+	String t_name;
+	Date b_date;
+	public Theatre(int t_id, String t_name, Date b_date) {
+		this.t_id = t_id;
+		this.t_name = t_name;
+		this.b_date = b_date;
+	}
+	@Override
+	public String toString() {
+		return "Theatre t_id : "+t_id +" t_name : "+t_name+"b_date : "+b_date ;
+	}
+}

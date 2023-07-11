@@ -1,0 +1,23 @@
+package com.joc;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class ManyToOneEx {
+	public static void main(String[] args) {
+		Session se=Hibernate_UtilFamily.getSessionn();
+		Transaction tx=se.beginTransaction();
+		
+		College col=new College();
+		col.setCid(111);
+		col.setCname("SKUCET");
+		col.setLocation("Anantapur");
+		
+		Groups g=new Groups();
+		g.setGid(222);
+		g.setGname("Electronics and Communication Engineering");
+		g.setFees(450000);
+		g.setCol(col);
+	}
+
+}

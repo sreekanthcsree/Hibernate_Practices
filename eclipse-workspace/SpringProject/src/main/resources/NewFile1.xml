@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+      <bean id="b" class="com.qoct.Book">
+          <property name="bid" value="15"/>
+          <property name="bname" value="Black Book"/>
+          <property name="price" value="10000.67"/>
+      </bean>
+      
+      <bean id="ca" class="com.qoct.Category" autowire="byType">
+       <property name="cname" value="Learning Java"/>
+      </bean>
+
+
+  <bean id="c" class="com.qoct.CategoryCons" autowire="constructor">
+    <constructor-arg value="Hello World"/>
+  </bean>
+
+
+</beans>

@@ -1,0 +1,29 @@
+package com.joc;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class OneToOneEx {
+	public static void main(String[] args) {
+		Session se = Hibernate_UtilFamily.getSessionn();
+		Transaction tr = se.beginTransaction();
+		
+		Address ad=new Address();
+		ad.setHouseno(2-39);
+		ad.setCity("atp");
+		ad.setState("ap");
+		
+		Employee ex=new Employee();
+		ex.setEid(101);
+		ex.setName("sree");
+		ex.setSalary(230000.54f);
+		ex.setAd(ad);
+		
+		se.save(ex);
+		tr.commit();
+		System.out.println("data inserted");
+		
+		
+	}
+
+}

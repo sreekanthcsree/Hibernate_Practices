@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <h1>My Indian Cricket Team:</h1>
+  <h3 align="left" style="color:yellow">India Test Team Squad:</h3>
+<body bgcolor="blue">
+<marquee><font="impact"size="70" color="red">C SREEKANTH</font></marquee>
+</body>
+<h5>
+  <ol>
+<li>Rohit Sharma</li>
+<li>K L Rahul</li>
+<li>Chateswar Pujara</li>
+<li>Virat Kohli</li>
+<li>SuryaKumar Yadav</li>
+<li>Ravichandran Ashwin</li>
+<li>Ravindra Jadeja</li>
+<li>Axar Patel</li>
+<li>Srikar Bharath</li>
+<li>Mohammed Shami</li>
+<li>Mohammed Siraj</li>
+
+  </ol>
+</h5>
+</body>
+</html>

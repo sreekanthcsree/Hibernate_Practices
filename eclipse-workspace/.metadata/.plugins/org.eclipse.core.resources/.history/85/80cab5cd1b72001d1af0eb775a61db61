@@ -1,0 +1,14 @@
+package com.sree;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class SpringTest {
+	public static void main(String[] args) {
+		ApplicationContext ctx=new ClassPathXmlApplicationContext("configDAO.xml");
+		
+		SpringDAO ex=(SpringDAO)ctx.getBean("save");
+		ex.save(new Student(2546256, "Sreekanth", "Hyderabad"));
+		System.out.println("Record Saved Successfully");
+	}
+}

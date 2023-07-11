@@ -1,0 +1,40 @@
+package com;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class ReferenceClass {
+
+	public static void main(String[] args) {
+		Configuration cnf=new Configuration();
+		cnf.configure("welcome.xml");
+		SessionFactory sf=cnf.buildSessionFactory();
+		Session se=sf.openSession();
+		se.beginTransaction();
+		Transaction tr=se.beginTransaction();
+		
+		Employee emp=new Employee();
+		emp.setId(1002);
+		emp.setName("durga");
+		emp.setLocation("ctr");
+		se.save(emp);
+		
+		Employee emp1=new Employee();
+		emp1.setId(1003);
+		emp1.setName("sunil");
+		emp1.setLocation("kalikiri");
+		se.save(emp1);
+		
+		Employee emp2=new Employee();
+		emp2.setId(1004);
+		emp2.setName("satheesh");
+		emp2.setLocation("tirupathi");
+		se.save(emp2);
+		tr.commit();
+		
+		System.out.println("successfully Record saved");
+
+	}
+}

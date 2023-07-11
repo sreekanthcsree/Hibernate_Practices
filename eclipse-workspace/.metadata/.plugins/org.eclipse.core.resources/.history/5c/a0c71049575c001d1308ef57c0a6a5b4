@@ -1,0 +1,55 @@
+package com.joc;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="empl")
+public class Employee {
+	
+	@Id
+	@Column(name="eid")
+	int eid;
+	@Column(name="e_name")
+	String name;
+	@Column(name="e_salary")
+	float salary;
+	@OneToOne(targetEntity=Address.class,cascade=CascadeType.ALL)
+	@JoinColumn(name="a_ad",referencedColumnName="houseno")
+	Address ad;
+	
+	public int getEid() {
+		return eid;
+	}
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public float getSalary() {
+		return salary;
+	}
+	public void setSalary(float salary) {
+		this.salary = salary;
+		
+	}
+	public Address getAd() {
+		return ad;
+	}
+	public void setAd(Address ad) {
+		this.ad = ad;
+	}
+	
+
+	
+
+}

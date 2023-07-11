@@ -1,0 +1,20 @@
+package com.joc;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.Session;
+
+public class NativeExample {
+	public static void main(String[] args) {
+		Session se=Hibernate_UtilFamily.getSessionn();
+		String q="select * from Coll";
+		List<College>clist=se.createSQLQuery(q).list();
+		Iterator itr=clist.iterator();
+		while(itr.hasNext()) {
+			Object[] c=(Object[])itr.next();
+			System.out.println("College id :"+c[0]+" Name :"+c[1]+" Location :"+c[2]);
+			System.out.println("successfully executed");
+		}
+	}
+}

@@ -1,0 +1,27 @@
+package com.joct;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Get {
+
+	public static void main(String[] args) {
+		Configuration con=new Configuration();
+		con.configure("*hello.xml");
+		SessionFactory sf=con.buildSessionFactory();
+		Session se=sf.openSession();
+		Transaction tr=se.beginTransaction();
+		
+		Sree ex=new Sree();
+		ex.setId(1);
+		ex.setName("Hello");
+		se.save(ex);
+		tr.commit();
+		System.out.println("Data Inserted");
+		
+
+	}
+
+}

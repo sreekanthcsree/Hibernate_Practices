@@ -1,0 +1,21 @@
+package com.sree;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+public class SpringTest {
+	public static void main(String[] args) {
+		ApplicationContext ctx=new ClassPathXmlApplicationContext("configDAO.xml");
+		
+		/*SpringDAO ex=(SpringDAO)ctx.getBean("save");
+		ex.sree(new Student(2546256, "Sreekanth", "Hyderabad"));
+		System.out.println("Record Saved Successfully");
+		
+	*/
+		ApplicationContext ac=new FileSystemXmlApplicationContext("configDAC:\\Users\\91958\\eclipse-workspace\\SpringJDBC\\src\\main\\java\\com\\sree\\SpringTest.javaO.xml");
+		UpdateAndDelete ua=(UpdateAndDelete)ac.getBean("uad");
+		ua.update(new Student(2546256,"null","tpt"));
+		
+	}
+}

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Java">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../Downloads/eclipse-jee-oxygen-3-win32-x86_64/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Java.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="../../Downloads/jar_files (1)/mysql-connector-java-8.0.11.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Java.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="B">
+        <java classname="com.coreJava.B" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="DynamicPolyExOne">
+        <java classname="com.polymorphism.DynamicPolyExOne" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="DynamicPolyOne">
+        <java classname="com.dextris.DynamicPolyOne" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="EncapsulationEx (1)">
+        <java classname="com.dextris.EncapsulationEx" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="EncapsulationEx">
+        <java classname="com.encapsulation.EncapsulationEx" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="EncapsulationExOne">
+        <java classname="com.encapsulation.EncapsulationExOne" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="FibanocciSeries">
+        <java classname="com.FibanocciSeries" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="InheritanceOne">
+        <java classname="com.dextris.InheritanceOne" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="InheritanceThree (1)">
+        <java classname="com.dextris.InheritanceThree" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="InheritanceThree">
+        <java classname="com.inheritance.InheritanceThree" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="InheritanceTwo">
+        <java classname="com.inheritance.InheritanceTwo" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="Plants (1)">
+        <java classname="com.dextris.Plants" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="Plants">
+        <java classname="com.abstraction.Plants" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="Program">
+        <java classname="com.Program" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="SentenceReverse">
+        <java classname="com.SentenceReverse" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="StaticPoly">
+        <java classname="com.dextris.StaticPoly" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="StaticPolyEx">
+        <java classname="com.polymorphism.StaticPolyEx" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="StringBuffer.BufferedReaderExample">
+        <java classname="com.StringBuffer$BufferedReaderExample" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="StringReverse">
+        <java classname="com.StringReverse" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+    <target name="Test (2)">
+        <java classname="com.coreJava.Test" failonerror="true" fork="yes">
+            <classpath refid="Java.classpath"/>
+        </java>
+    </target>
+</project>

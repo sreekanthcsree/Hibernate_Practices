@@ -1,0 +1,23 @@
+package com.sree;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class UpdateAndDelete {
+	
+	JdbcTemplate jdbcTemplate;
+	
+	public UpdateAndDelete(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	
+	public void update(Student s) {
+		//String que ="update table person set lastname='Kumar' where id='104'";
+		String query="update student set lastname='"+s.getLocation()+"' where id="+s.getId();
+		int x = jdbcTemplate.update(query);
+		if(x > 0)
+			System.out.println("Records Updated "+x);
+		else
+			System.out.println("oops something went wrong");
+		
+	}
+}

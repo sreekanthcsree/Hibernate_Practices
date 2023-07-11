@@ -1,0 +1,9 @@
+package com.dextris.Dextris_Spring.Boot;
+
+public class Sree {
+	
+	public String helloSree() {
+	  return "Prakash";
+	}
+
+}

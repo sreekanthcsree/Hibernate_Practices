@@ -1,0 +1,18 @@
+package com.joc;
+
+
+
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class OneToOneRetrieve {
+	public static void main(String[] args) {
+		Session se=Hibernate_UtilFamily.getSessionn();
+		
+		se.
+		
+		
+	}
+
+} 

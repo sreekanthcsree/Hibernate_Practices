@@ -1,0 +1,9 @@
+package com.sreekanth.Segmap;
+
+public class Controller {
+	
+	public String hai() {
+		return "Hai Hello,Welcome To IT Industry";
+	}
+
+}

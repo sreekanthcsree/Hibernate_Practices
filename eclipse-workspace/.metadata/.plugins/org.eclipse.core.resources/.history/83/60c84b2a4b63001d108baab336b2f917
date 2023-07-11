@@ -1,0 +1,42 @@
+package com.joc;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class OneToManyEx {
+
+	public static void main(String[] args) {
+	   Session se=Hibernate_UtilFamily.getSessionn();
+	   Transaction tr=se.beginTransaction();
+	   
+	   Course c1=new Course();
+	   c1.setCid(101);
+	   c1.setCname("Java");
+	   c1.setFees(30000);
+	   
+	   Course c2=new Course();
+	   c2.setCid(102);
+	   c2.setCname("Testing");
+	   c2.setFees(25000);
+	   
+	   Institute i=new Institute();
+	   i.setIid(201);
+	   i.setIname("Joc");
+	   i.setLocation("Bangalore");
+	   
+	   List<Course>clist=new ArrayList<>();
+	   clist.add(c1);
+	   clist.add(c2);
+	   
+	   i.setCou(clist);
+	   
+	   se.save(i);
+	   tr.commit();
+	   System.out.println("All the records successfully saved");
+
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.conditionalStmts;
+
+public class LargestofTwoNumbers {
+	
+	public static void main(String[] args) {
+		
+		int x=20;
+		int y=40;
+		
+		if(x>y) {
+			System.out.println("x is largest number");
+		}else {
+			System.out.println("y is largets number");
+		}
+	}
+
+}

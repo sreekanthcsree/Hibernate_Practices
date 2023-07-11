@@ -1,0 +1,37 @@
+package com.joct;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class OneToOneExampleVani {
+public static void main(String[] args) {
+	Configuration con=new Configuration();
+	con.configure("hello.xml");
+	SessionFactory sf= con.buildSessionFactory();
+	Session se =sf.openSession();
+	Transaction tr=se.beginTransaction();
+	
+	
+	AddressTwo at = new AddressTwo();
+	at.setDno(56/3);
+	at.setState("andhra pradesh");
+	at.setCountry("india");
+	
+	EmployeeTwo et = new EmployeeTwo();
+	et.setAd(at);
+	et.setLocation("bagaloru");
+	et.setName("vani");
+	et.setId(143);
+	et.setSalary(100000f);
+	
+	
+	
+	se.save(at);
+	tr.commit();
+	System.out.println("inserted succefully");
+
+	
+}
+}

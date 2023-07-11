@@ -1,0 +1,17 @@
+package com;
+
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class DeleteEx {
+	public static void main(String[] args) {
+		Session se = HibernateUtil.getSession(); 
+		Transaction tr=se.beginTransaction();
+		
+		Employee as=(Employee)se.get(Employee.class,new Integer(1001));
+		se.delete(as);
+		tr.commit();
+		System.out.println("successfully deleted");
+	}
+}

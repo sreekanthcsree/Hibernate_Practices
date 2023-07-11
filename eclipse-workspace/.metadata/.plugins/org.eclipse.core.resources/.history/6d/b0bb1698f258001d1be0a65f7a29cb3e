@@ -1,0 +1,26 @@
+package com.joc;
+
+
+
+
+
+public class SaveDetails {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Configuration cnf= new Configuration();
+		cnf.configure("hibernate-config.xml");
+		SessionFactory sf = cnf.buildSessionFactory();
+		Session se = sf.openSession();
+		Transaction tx =se.beginTransaction();
+		
+		//create a object for ur student class
+		Student s = new Student();
+		s.setId(111);
+		s.setName("ABCD");
+		s.setCourse("Java");
+		
+		se.save(s);
+		tx.commit();
+		System.out.println("Done with my programm");
+	}
+}

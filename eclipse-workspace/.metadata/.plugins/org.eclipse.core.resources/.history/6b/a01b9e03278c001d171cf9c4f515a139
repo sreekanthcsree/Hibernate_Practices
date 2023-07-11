@@ -1,0 +1,13 @@
+package com.joct.SpringBootExample;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+	
+	@GetMapping
+	public String sayHello() {
+		return "Hai Hello,Welcome to SpringBoot Simple HelloWorld Program";
+	}
+}

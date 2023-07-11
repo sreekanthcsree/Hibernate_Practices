@@ -1,0 +1,9 @@
+package com.java.repository;
+
+public class BooksRepository {
+	
+	public interface BooksRepositor extends CrudRepository<Books, Integer>  
+	{  
+
+	}
+}

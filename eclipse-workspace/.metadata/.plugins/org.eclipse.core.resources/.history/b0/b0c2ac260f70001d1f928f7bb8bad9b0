@@ -1,0 +1,70 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+
+	<bean id="i1" class="com.qoct.Institute">
+		<property name="id" value="111"></property>
+		<property name="name" value="Hello"></property>
+		<property name="location" value="Bangalore"></property>
+	</bean>
+
+	<bean id="d" class="com.qoct.Employee">
+		<constructor-arg value="112" />
+		<constructor-arg value="Durga" />
+		<constructor-arg value="20000.56f" />
+		<constructor-arg ref="d1" />
+	</bean>
+
+	<bean id="d1" class="com.qoct.Address">
+		<constructor-arg value="239" />
+		<constructor-arg value="tpt" />
+		<constructor-arg value="AP" />
+
+	</bean>
+
+	<bean id="es" class="com.qoct.EmployeeSetters">
+		<property name="id" value="151" />
+		<property name="name" value="Sree" />
+		<property name="salary" value="450000" />
+		<property name="ad" ref="as1" />
+	</bean>
+
+	<bean id="as1" class="com.qoct.AddressSetters">
+		<property name="Hno" value="227" />
+		<property name="city" value="TPT" />
+		<property name="country" value="INDIA"></property>
+
+	</bean>
+
+	<bean id="n" class="com.qoct.MapCon">
+		<property name="qid" value="789" />
+		<property name="ma">
+			<map>
+				<entry key="what is POJO" value="plane old java object" />
+				<entry key="what is Java"
+					value="Java is a Simple Programming Language" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="cs" class="com.qoct.CollSetEx">
+		<property name="qid" value="890" />
+		<property name="qname" value="SreeDetails" />
+		<property name="sj">
+
+			<Set>
+				<value>My Name is CS</value>
+				<value> Hello</value>
+				<value>welcome</value>
+				<value>India</value>
+				
+			</Set>
+		</property>
+	</bean>
+</beans>              
+  
