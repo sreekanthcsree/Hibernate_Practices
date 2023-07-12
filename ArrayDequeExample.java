@@ -13,7 +13,7 @@ public class ArrayDequeExample {
 		ad.add("anil");
 		ad.add("pankaj");
 		ad.add("ravi");
-		ad.add("durga");
+		ad.add("durga");//manoj
 		ad.add("zampa");
 		
 		
